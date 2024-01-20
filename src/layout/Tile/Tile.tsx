@@ -1,5 +1,4 @@
 import { Bottle } from '../../types'
-import Note from '../../components/Note';
 import { Button, Card, Stack } from 'react-bootstrap';
 import { Line } from '../../components/Line';
 import { useState } from 'react';
@@ -29,7 +28,7 @@ export default function Tile(propsBottle: BottleProps) {
 
     const updateBottle = async (bottle: Bottle) => {
         await Axios.put(
-            'http://127.0.0.1:3000/bottles/' + bottle.id,
+            'http://localhost:3004/bottles/' + bottle.id,
             bottle
         );
         setBottle(bottle);

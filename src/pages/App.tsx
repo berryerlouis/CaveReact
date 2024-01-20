@@ -14,7 +14,7 @@ export default function App() {
 
   const fetchBottles = async () => {
     const { data } = await Axios.get(
-      'http://127.0.0.1:3000/bottles/'
+      'http://localhost:3004/bottles/'
     );
     setBottles(data);
   };
@@ -35,7 +35,7 @@ export default function App() {
 
   const deleteBottle = async (bottle: Bottle) => {
     setBottles((bottles) => {
-      removeBottle(bottle,(success:boolean) => {
+      removeBottle(bottle,() => {
         
       })
       return bottles.filter(item => item.id !== bottle.id)

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "json-server --watch public/db/whiskies.json & vite",
+    "dev": "json-server --port 3004 --watch public/db/whiskies.json & vite --host",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -18,12 +18,15 @@
     "react-bootstrap": "^2.9.1",
     "react-bootstrap-icons": "^1.10.3",
     "react-dom": "^18.2.0",
-    "react-webcam": "^7.2.0"
+    "react-webcam": "^7.2.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@types/node": "^20.11.5",
     "@types/react": "^18.2.37",
     "@types/react-bootstrap": "^0.32.35",
     "@types/react-dom": "^18.2.15",
+    "@types/uuid": "^9.0.7",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "@vitejs/plugin-react": "^4.2.0",

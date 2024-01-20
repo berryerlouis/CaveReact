@@ -158,7 +158,7 @@ export function ModalBottle({ ...bottleProps }: BottleProps) {
         <Modal.Footer>
           {
           !bottleProps.newBottle &&
-            <Button variant="danger" className='me-auto' onClick={e => bottleProps.onDelete && bottleProps.onDelete(bottle)}>
+            <Button variant="danger" className='me-auto' onClick={() => bottleProps.onDelete && bottleProps.onDelete(bottle)}>
               Delete
             </Button>
           }

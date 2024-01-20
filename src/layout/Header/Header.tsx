@@ -6,6 +6,7 @@ import { ModalBottle } from "../../components/ModalBottle"
 import React from "react"
 import { Bottle } from "../../types"
 import { newBottle } from "../../Utils/utils"
+import { v4 as uuidv4 } from 'uuid';
 
 type HeaderProps = {
 	newSearch: (value: string) => void
@@ -25,7 +26,7 @@ export default function Header(props: HeaderProps) {
 	return (
 		<>
 			<ModalBottle newBottle={true} onValidSubmit={updateBottleFromModal} show={modalShow} onHide={() => setModalShow(false)} bottle={{
-				id: crypto.randomUUID(),
+				id: uuidv4(),
 				qty: 0,
 				name: "",
 				age: 0,
