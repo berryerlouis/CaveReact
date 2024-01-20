@@ -5,21 +5,21 @@ export type CbGetBottles = (bottles: Bottle[] | undefined) => void
 export type CbSetBottle = (success: boolean) => void
 
 export function getBottles(cbGetBottles: CbGetBottles) {
-    makeFetchGet<Bottle[]>('http://localhost:3004/bottles/')
+    makeFetchGet<Bottle[]>('http://192.168.1.1:3004/bottles/')
         .then(bottles => cbGetBottles(bottles))
 }
 
 export function updateBottle(bottle: Bottle, cbSetBottle?: CbSetBottle) {
-    makeFetchPut<Bottle>('http://localhost:3004/bottles/' + bottle.id, bottle)
+    makeFetchPut<Bottle>('http://192.168.1.1:3004/bottles/' + bottle.id, bottle)
         .then(isTrue => cbSetBottle && cbSetBottle(isTrue))
 }
 
 export function newBottle(bottle: Bottle, cbSetBottle: CbSetBottle) {
-    makeFetchPost<Bottle>('http://localhost:3004/bottles/', bottle)
+    makeFetchPost<Bottle>('http://192.168.1.1:3004/bottles/', bottle)
         .then(isTrue => cbSetBottle(isTrue))
 }
 export function removeBottle(bottle: Bottle, cbSetBottle: CbSetBottle) {
-    makeFetchDelete<Bottle>('http://localhost:3004/bottles/' + bottle.id, bottle)
+    makeFetchDelete<Bottle>('http://192.168.1.1:3004/bottles/' + bottle.id, bottle)
         .then(isTrue => cbSetBottle(isTrue))
 }
 

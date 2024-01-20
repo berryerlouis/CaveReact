@@ -28,7 +28,7 @@ export default function Tile(propsBottle: BottleProps) {
 
     const updateBottle = async (bottle: Bottle) => {
         await Axios.put(
-            'http://localhost:3004/bottles/' + bottle.id,
+            'http://192.168.1.1:3004/bottles/' + bottle.id,
             bottle
         );
         setBottle(bottle);

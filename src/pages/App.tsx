@@ -14,7 +14,7 @@ export default function App() {
 
   const fetchBottles = async () => {
     const { data } = await Axios.get(
-      'http://localhost:3004/bottles/'
+      'http://192.168.1.1:3004/bottles/'
     );
     setBottles(data);
   };
