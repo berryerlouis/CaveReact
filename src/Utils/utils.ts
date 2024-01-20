@@ -1,7 +1,7 @@
 import { Bottle } from "../types";
 
 
-export const jsonserver:string = "'+jsonserver+'";
+export const jsonserver:string = "192.168.1.1";
 
 export type CbGetBottles = (bottles: Bottle[] | undefined) => void
 export type CbSetBottle = (success: boolean) => void
