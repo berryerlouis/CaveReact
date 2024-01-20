@@ -6,7 +6,7 @@ import { Line } from '../components/Line.tsx';
 import { useEffect, useState } from 'react';
 import { Bottle } from '../types.tsx';
 import Axios from 'axios';
-import { removeBottle } from '../Utils/utils.ts';
+import { jsonserver, removeBottle } from '../Utils/utils.ts';
 
 export default function App() {
   const [search, setSearch] = useState('');
@@ -14,7 +14,7 @@ export default function App() {
 
   const fetchBottles = async () => {
     const { data } = await Axios.get(
-      'http://192.168.1.1:3004/bottles/'
+      'http://' + jsonserver + ':3004/bottles/'
     );
     setBottles(data);
   };
@@ -35,8 +35,8 @@ export default function App() {
 
   const deleteBottle = async (bottle: Bottle) => {
     setBottles((bottles) => {
-      removeBottle(bottle,() => {
-        
+      removeBottle(bottle, () => {
+
       })
       return bottles.filter(item => item.id !== bottle.id)
     })

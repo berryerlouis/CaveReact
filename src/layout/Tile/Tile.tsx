@@ -7,6 +7,7 @@ import { Search, Star, StarFill } from 'react-bootstrap-icons';
 import { CardItem } from '../../components/CardItem';
 import TileImage from '../../components/TileImage';
 import Axios from 'axios';
+import { jsonserver } from '../../Utils/utils';
 
 type BottleProps = {
     bottle: Bottle
@@ -28,7 +29,7 @@ export default function Tile(propsBottle: BottleProps) {
 
     const updateBottle = async (bottle: Bottle) => {
         await Axios.put(
-            'http://192.168.1.1:3004/bottles/' + bottle.id,
+            'http://'+jsonserver+':3004/bottles/' + bottle.id,
             bottle
         );
         setBottle(bottle);
